@@ -13,6 +13,8 @@
 		B3EDEBA321BAC11B00D3F275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3EDEBA221BAC11B00D3F275 /* Assets.xcassets */; };
 		B3EDEBA621BAC11B00D3F275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EDEBA421BAC11B00D3F275 /* LaunchScreen.storyboard */; };
 		B3EDEBB121BAC11B00D3F275 /* WKNativeBridgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDEBB021BAC11B00D3F275 /* WKNativeBridgeTests.swift */; };
+		B3EDEBBD21BAC22E00D3F275 /* WKNativeBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDEBBC21BAC22E00D3F275 /* WKNativeBridge.swift */; };
+		B3EDEBBE21BAC22E00D3F275 /* WKNativeBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDEBBC21BAC22E00D3F275 /* WKNativeBridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		B3EDEBAC21BAC11B00D3F275 /* WKNativeBridgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKNativeBridgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EDEBB021BAC11B00D3F275 /* WKNativeBridgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNativeBridgeTests.swift; sourceTree = "<group>"; };
 		B3EDEBB221BAC11B00D3F275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3EDEBBC21BAC22E00D3F275 /* WKNativeBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKNativeBridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 		B3EDEB8F21BAC11900D3F275 = {
 			isa = PBXGroup;
 			children = (
+				B3EDEBBB21BAC12700D3F275 /* WKNativeBridgeLib */,
 				B3EDEB9A21BAC11900D3F275 /* WKNativeBridge */,
 				B3EDEBAF21BAC11B00D3F275 /* WKNativeBridgeTests */,
 				B3EDEB9921BAC11900D3F275 /* Products */,
@@ -94,6 +98,14 @@
 				B3EDEBB221BAC11B00D3F275 /* Info.plist */,
 			);
 			path = WKNativeBridgeTests;
+			sourceTree = "<group>";
+		};
+		B3EDEBBB21BAC12700D3F275 /* WKNativeBridgeLib */ = {
+			isa = PBXGroup;
+			children = (
+				B3EDEBBC21BAC22E00D3F275 /* WKNativeBridge.swift */,
+			);
+			path = WKNativeBridgeLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +211,7 @@
 			files = (
 				B3EDEB9E21BAC11900D3F275 /* ViewController.swift in Sources */,
 				B3EDEB9C21BAC11900D3F275 /* AppDelegate.swift in Sources */,
+				B3EDEBBD21BAC22E00D3F275 /* WKNativeBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EDEBB121BAC11B00D3F275 /* WKNativeBridgeTests.swift in Sources */,
+				B3EDEBBE21BAC22E00D3F275 /* WKNativeBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -346,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
