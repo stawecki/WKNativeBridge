@@ -12,8 +12,6 @@ import UIKit
 import WebKit
 import MessageUI
 
-typealias Message = [String: Any]
-
 public class WKNativeBridge: NSObject, WKScriptMessageHandler {
     
     public typealias Callback = (_ responseData: Any?) -> Void
@@ -152,18 +150,7 @@ public class WKNativeBridge: NSObject, WKScriptMessageHandler {
     }
 
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-        /*
-         if let responseID = message["responseID"] as? String {
-         guard let callback = responseCallbacks[responseID] else { continue }
-         callback(message["responseData"])
-         responseCallbacks.removeValue(forKey: responseID)
-         */
-        
-//        print("message.name:\(message.name)")
         if message.name == "WKB" {
-//            print("message.body:\(message.body)")
-            //            Data(from: message.body))
             let bodyString: String = String(describing:message.body);
             if (verbose) {
                 print("WKB:JS->Native:\(bodyString)")
@@ -174,6 +161,8 @@ public class WKNativeBridge: NSObject, WKScriptMessageHandler {
                 let eventHandlerName = event!["handlerName"] as? String
                 let eventCallbackID = event!["callbackID"] as? String
                 let eventInfo = event!["info"] as? [String:Any]
+                // TODO: ideally "event" should be codable, but "info" may contain Any.
+                // Consider: JSONAny (https://stackoverflow.com/questions/46279992/any-when-decoding-json-with-codable)
                 if (eventCall == "send" && eventHandlerName != nil) {
                     let handler = messageHandlers[eventHandlerName!]
                     if (handler != nil) {
@@ -209,10 +198,6 @@ public class WKNativeBridge: NSObject, WKScriptMessageHandler {
                     }
                 }
             }
-            
         }
-        
     }
-    
-    
 }
