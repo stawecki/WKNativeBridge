@@ -168,7 +168,9 @@ public class WKNativeBridge: NSObject, WKScriptMessageHandler {
                     if (handler != nil) {
                         if (eventCallbackID != nil) {
                             let callback: Callback = { (responseData: Any?) in
-                                print("responseData:\(responseData!)")
+                                if (self.verbose) {
+                                    print("responseData:\(responseData!)")
+                                }
                                 // if event requries callback from JS:
                                 do {
                                     var sendData: Any = ""
